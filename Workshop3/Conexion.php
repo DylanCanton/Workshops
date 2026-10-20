@@ -14,8 +14,6 @@ try {
 
     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    echo "Conexión correcta a MySQL";
-
 } catch (PDOException $e) {
     echo "Error de conexión: " . $e->getMessage();
 }
