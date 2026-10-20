@@ -1,15 +1,16 @@
 
+
 <?php
 
 session_start();
 
-// Verificar verificar inicio de sesión
+// Verificar inicio de sesión
 if (!isset($_SESSION["id"])) {
-    header("Location: Index.php");
+    header("Location: index.php");
     exit;
 }
 
-require_once "Conexion.php";
+require_once "conexion.php";
 
 // Obtener el ID del usuario autenticado
 $id = $_SESSION["id"];
@@ -55,14 +56,23 @@ $provincias = $stmt_provincias->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mi Perfil - Workshop 2</title>
+    <title>Mi Perfil</title>
 
     <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
 
-    <div class="panel-container">
+    <div class="cursos-container">
+
+        <!-- Menú de navegación -->
+        <nav class="cursos-nav">
+            <a href="panel.php">Mi Perfil</a>
+            <a href="cursos.php">Cursos</a>
+            <a href="logout.php">Cerrar sesión</a>
+        </nav>
+
+        <hr>
 
         <div class="panel-header">
 
@@ -90,9 +100,7 @@ $provincias = $stmt_provincias->fetchAll(PDO::FETCH_ASSOC);
 
         </div>
 
-
         <div class="panel-grid">
-
 
             <div class="card">
 
@@ -191,9 +199,8 @@ $provincias = $stmt_provincias->fetchAll(PDO::FETCH_ASSOC);
 
         </div>
 
-
         <div class="panel-footer">
-            Workshop2 S.A
+            Workshop 3
         </div>
 
     </div>
